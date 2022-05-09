@@ -1,14 +1,11 @@
 variable "libvirt_disk_path" {
   description = "path for libvirt pool"
-}
-
-variable "vm_hostname" {
-  description = "vm hostname"
-  default     = "terraform-kvm-ansible"
+  default     = "/home/YourUserNameHere/project/pool1"
 }
 
 variable "ssh_username" {
   description = "the ssh user to use"
+  default     = "YourUserNameHere"
 }
 
 variable "ssh_private_key" {
