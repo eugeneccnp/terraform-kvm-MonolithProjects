@@ -1,0 +1,24 @@
+---
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/systemd_module.html#examples
+- hosts: apache
+  become: yes
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: Install apache
+      yum:
+        name: httpd
+        state: latest
+        update_cache: yes
+
+    - name: Enable service apache and ensure it is not masked
+      systemd:
+        name: httpd
+        enabled: yes
+        masked: no
+
+    - name: ensure apache is started
+      systemd:
+        state: started
+        name: httpd
