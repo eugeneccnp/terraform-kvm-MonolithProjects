@@ -6,8 +6,11 @@ Instructions:
 ###################################################################################################################################
 
 Step1: clone repo
+
 Step2: Replace YourUserName in variables.tf with ${LOGNAME}
+
 Step3: insert SSH keys into libvirt.tf
+
 Step4: Upon first terraform init of MonolithProjects module,add below provisioner block to --> .terraform/modules/vm/main.tf
 
   provisioner "local-exec" {
